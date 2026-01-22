@@ -11,14 +11,19 @@ The GitHub version splits the graphic into two files:
 
 ---
 
+## Your Repository
+
+**GitHub Repository:** https://github.com/mekcoleman/chronicabsenteeism
+
+**Live URL (once deployed):** https://mekcoleman.github.io/chronicabsenteeism/chronic_absenteeism_graphic_github.html
+
+---
+
 ## Deployment Steps
 
-### 1. Create a GitHub Repository
+### 1. Your Repository is Already Created ✓
 
-```bash
-# Create a new repository on GitHub (via web interface)
-# Name it something like: illinois-school-data
-```
+Repository: `mekcoleman/chronicabsenteeism`
 
 ### 2. Upload Files
 
@@ -27,15 +32,15 @@ Upload these two files to your repository:
 - `school_data.json`
 
 **Option A: Via GitHub Web Interface**
-1. Go to your repository
+1. Go to https://github.com/mekcoleman/chronicabsenteeism
 2. Click "Add file" → "Upload files"
 3. Drag both files
 4. Commit changes
 
 **Option B: Via Git Command Line**
 ```bash
-git clone https://github.com/YOUR-USERNAME/illinois-school-data.git
-cd illinois-school-data
+git clone https://github.com/mekcoleman/chronicabsenteeism.git
+cd chronicabsenteeism
 # Copy the two files into this directory
 git add chronic_absenteeism_graphic_github.html school_data.json
 git commit -m "Add Illinois schools chronic absenteeism graphic"
@@ -44,17 +49,16 @@ git push origin main
 
 ### 3. Enable GitHub Pages
 
-1. Go to repository Settings
-2. Navigate to "Pages" (left sidebar)
-3. Under "Source", select "Deploy from a branch"
-4. Select branch: `main` and folder: `/ (root)`
-5. Click "Save"
+1. Go to https://github.com/mekcoleman/chronicabsenteeism/settings/pages
+2. Under "Source", select "Deploy from a branch"
+3. Select branch: `main` and folder: `/ (root)`
+4. Click "Save"
 
 ### 4. Access Your Graphic
 
 After a few minutes, your graphic will be available at:
 ```
-https://YOUR-USERNAME.github.io/illinois-school-data/chronic_absenteeism_graphic_github.html
+https://mekcoleman.github.io/chronicabsenteeism/chronic_absenteeism_graphic_github.html
 ```
 
 ---
@@ -68,7 +72,7 @@ Once hosted on GitHub Pages, you can embed it using an iframe with **automatic h
 ```html
 <iframe 
     id="school-graphic"
-    src="https://YOUR-USERNAME.github.io/illinois-school-data/chronic_absenteeism_graphic_github.html" 
+    src="https://mekcoleman.github.io/chronicabsenteeism/chronic_absenteeism_graphic_github.html" 
     width="100%" 
     style="border: none; display: block;"
     scrolling="no">
@@ -94,7 +98,7 @@ window.addEventListener('message', function(event) {
 
 ```html
 <iframe 
-    src="https://YOUR-USERNAME.github.io/illinois-school-data/chronic_absenteeism_graphic_github.html" 
+    src="https://mekcoleman.github.io/chronicabsenteeism/chronic_absenteeism_graphic_github.html" 
     width="100%" 
     height="2000" 
     frameborder="0"
