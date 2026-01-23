@@ -526,17 +526,29 @@
         // Load data from external JSON file
         let searchData = null;
         
-        fetch('school_data.json')
-            .then(response => response.json())
+        // Use absolute URL to ensure it works on GitHub Pages
+        const dataUrl = 'https://mekcoleman.github.io/chronicabsenteeism/school_data.json';
+        
+        fetch(dataUrl)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.json();
+            })
             .then(data => {
                 searchData = data;
                 document.getElementById('loading-message').style.display = 'none';
                 document.getElementById('data-sections').style.display = 'block';
                 updateDisplay(null, currentSubgroup);
+                console.log('Data loaded successfully');
             })
             .catch(error => {
                 console.error('Error loading data:', error);
-                document.getElementById('loading-message').textContent = 'Error loading data. Please refresh the page.';
+                document.getElementById('loading-message').innerHTML = 
+                    'Error loading data: ' + error.message + '<br><br>' +
+                    'The data file is available at: <a href="' + dataUrl + '" target="_blank">' + dataUrl + '</a><br><br>' +
+                    'Please try refreshing the page. If the problem persists, check the browser console for details.';
             });
 
         const searchInput = document.getElementById('search-input');
